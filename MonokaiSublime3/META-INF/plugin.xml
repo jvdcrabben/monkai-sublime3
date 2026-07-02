@@ -1,0 +1,35 @@
+<idea-plugin>
+  <id>com.jan.monokaisublime3</id>
+  <name>Monokai Sublime 3</name>
+  <version>2.0.0</version>
+  <vendor email="you@example.com" url="https://worldhistory.org">Jan</vendor>
+
+  <description><![CDATA[
+    Monokai Sublime 3 — a custom color scheme for PhpStorm and other JetBrains IDEs,
+    based on the classic Monokai/Sublime Text palette. Also available as a full IDE
+    theme (toolbars, menus, tool windows, etc.), with UI colors adapted from the
+    Neokai (Classic) theme.
+  ]]></description>
+
+  <change-notes><![CDATA[
+    2.0.0: Added a full IDE theme variant — editor colors stay Monokai Sublime 3,
+    but the surrounding IDE chrome (toolbars, menus, panels) now picks up a matching
+    dark palette adapted from Neokai (Classic).<br/>
+    1.0.0: Initial release (editor color scheme only).
+  ]]></change-notes>
+
+  <!-- Adjust since-build to match the IDE versions you want to support.
+       223 = 2022.3, so this covers 2022.3 and newer. -->
+  <idea-version since-build="223.0"/>
+
+  <!-- This plugin only ships a color scheme, so it works in any JetBrains IDE. -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Editor-only color scheme (works even if the person keeps their existing UI theme, e.g. Darcula) -->
+    <bundledColorScheme path="/Monokai_Sublime3.xml"/>
+
+    <!-- Full IDE theme: same editor colors, plus IDE-wide chrome colors -->
+    <themeProvider id="8f8d7ffb-ee2c-4a7f-805c-639297df53bd" path="/Monokai_Sublime3.theme.json"/>
+  </extensions>
+</idea-plugin>
